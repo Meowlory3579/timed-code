@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 body {
@@ -12,12 +12,16 @@ body {
     line-height: 1.3;
   }
 
+/* Only applies to index.html */
+
 #highscore-link {
     float: left;
+    font-size: 20px;
 }
 
 #timer {
     float: right;
+    font-size: 20px;
 }
 
 .main {
@@ -27,11 +31,36 @@ body {
 }
 
 #start-btn {
-    font-size: 25px;
     border-radius: 5px;
     padding: 5px;
 }
 
 #start-btn:hover {
     cursor: pointer;
+}
+
+.answer-buttons {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: gray;
+    /* display: flex;
+    flex-direction: column; */
+    gap: 10px;
+    width: 100%; 
+
+}
+
+.answer-buttons:hover {
+    cursor: pointer;
+}
+
+/* Only applies to highscores.html */
+
+#quiz-link {
+    float: left;
+    font-size: 20px;
+}
+
+#score-list {
+    margin-left: 30px;
 }

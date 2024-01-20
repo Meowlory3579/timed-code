@@ -9,12 +9,12 @@
   </head>
 
   <body>  
-      <!--Beginning: Header-->
-      <header>
-        <a href="highscores.html" id="highscore-link">High Scores</a>
-        <h3 class="time" id="timer"></h3>
-      </header>
-      <!--End: Header-->
+    <!--Beginning: Header-->
+    <header>
+      <a href="highscores.html" id="highscore-link">High Scores</a>
+      <h3 class="time" id="timer"></h3>
+    </header>
+    <!--End: Header-->
 
 
     <!--Beginning: Main-->
@@ -28,7 +28,7 @@
       <!-- Div for welcome message and start quiz button. This will be hidden once user clicks start -->
 
       <!-- Div for questions and answers. This is hidden until user clicks start -->
-      <div id="question-container" style="display:none;">
+      <div id="quiz-container" style="display:none;">
         <!-- Questions and answers will be added here dynamically -->
         <div id="question"></div>
         <div id="answer-buttons" class="btn-grid">
@@ -40,9 +40,10 @@
       <!-- Begin: Div for the end screen. This will be hidden until quiz is complete or time runs out -->
       <div id="end-container" style="display:none;">
         <p id="end-message">Finito!</p>
-        <div>Your score: <span id="score"></span></div>
+        <div id="score"></div>
         <input type="text" id="initials" placeholder="Enter initials">
-        <button id="save-btn">Save</button>
+        <button id="save-btn" disabled>Save</button>
+        <div id="thank-you"></div>
       </div>
       <!-- Begin: Div for the end screen. This will be hidden until quiz is complete or time runs out -->
           
