@@ -1,6 +1,6 @@
 // Globally-used variables
 var timeEl = document.querySelector(".time");
-var secondsLeft = 35;
+var secondsLeft = 60;
 var timerInterval = 0;
 var initials = document.getElementById('initials');
 var saveButton = document.getElementById('save-btn');
@@ -9,20 +9,30 @@ var currentQuestionIndex = 0; // Keeps track of which question from the question
 // Array of objects with Quiz Content
 var questions = [
   {
-    question: "What is the capital of United Kingdom?",
-    choices: ["London", "Paris", "Nairobi", "Prague"],
-    correct: "London"
+    question: "Commonly used data types DO NOT include:",
+    choices: ["strings", "booleans", "alerts", "numbers"],
+    correct: "alerts"
   },
   {
-    question: "How many days are there in a week?",
-    choices: ["Five", "Three", "Seven", "Eight"],
-    correct: "Seven"
+    question: "The condition in an if / else statement is enclosed with __________ .",
+    choices: ["quotes", "curly brackets", "parenthesis", "square brackets"],
+    correct: "parenthesis"
   },
   {
-    question: "What is the closest planet to the sun?",
-    choices: ["Earth", "Mercury", "Saturn", "Jupiter"],
-    correct: "Mercury"
+    question: "Arrays in JavaScript can be used to store __________ .",
+    choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+    correct: "all of the above"
   },
+  {
+    question: "String values must be enclosed within __________ when being assigned to variables.",
+    choices: ["commas", "curly brackets", "quotes", "parenthesis"],
+    correct: "quotes"
+  },
+  {
+    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    choices: ["JavaScript", "terminal/bash", "for loops", "console.log"],
+    correct: "console.log"
+  }
 ]
 
 // Display time remaining in timeEl

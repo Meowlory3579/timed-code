@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Timed Code Quiz</title>
+    <title>Coding Quiz Challenge</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>  
     <!--Beginning: Header-->
     <header>
-      <a href="highscores.html" id="highscore-link">High Scores</a>
+      <a href="highscores.html" id="highscore-link">View High Scores</a>
       <h3 class="time" id="timer"></h3>
     </header>
     <!--End: Header-->
@@ -20,26 +20,29 @@
     <!--Beginning: Main-->
     <section class="main">
 
-      <!-- Div for welcome message and start quiz button. This will be hidden once user clicks start -->
+      <!-- Beginning: Welcome. Div for welcome message and start quiz button. This will be hidden once user clicks start -->
       <div id="welcome-container">
-        <p id="welcome-message">This is my message to youuuuu </p>
+        <h3>Coding Quiz Challenge</h3>
+        <br>
+        <p id="welcome-message">Try to answer the following code-related questions within the time limit.<br>
+          Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</p><br>
         <button id="start-btn">Start Quiz</button>
       </div>  
-      <!-- Div for welcome message and start quiz button. This will be hidden once user clicks start -->
+      <!-- End: Welcome. Div for welcome message and start quiz button. This will be hidden once user clicks start -->
 
-      <!-- Div for questions and answers. This is hidden until user clicks start -->
-      <div id="quiz-container" style="display:none;">
+      <!-- Beginning: Quiz. Div for questions and answers. This is hidden until user clicks start -->
+      <div class="quiz-container" id="quiz-container" style="display:none;">
         <!-- Questions and answers will be added here dynamically -->
         <div id="question"></div>
         <div id="answer-buttons" class="btn-grid">
         </div>
         <!-- <div id="feedback"></div> -->
       </div>
-      <!-- Div for questions and answers. This is hidden until user clicks start -->
+      <!-- End: Quiz. Div for questions and answers. This is hidden until user clicks start -->
 
       <!-- Begin: Div for the end screen. This will be hidden until quiz is complete or time runs out -->
       <div id="end-container" style="display:none;">
-        <p id="end-message">Finito!</p>
+        <p id="end-message">All done!</p>
         <div id="score"></div>
         <input type="text" id="initials" placeholder="Enter initials">
         <button id="save-btn" disabled>Save</button>
