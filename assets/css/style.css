@@ -1,3 +1,9 @@
+:root {
+    --button-border-radius: 5px;
+    --button-padding: 5px;
+    --button-hover: pointer;
+}
+
 * {
     margin: 10px;
     padding: 0;
@@ -10,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     line-height: 1.3;
-  }
+}
 
 /* Only applies to index.html */
 /* Only applies to index.html */
@@ -26,6 +32,7 @@ body {
     float: right;
     font-size: 20px;
 }
+
 /* End: Header */
 
 /* Beginning: Main */
@@ -37,13 +44,14 @@ body {
 
 /* Beginning: Welcome */
 #start-btn {
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: var(--button-border-radius);
+    padding: var(--button-padding);
 }
 
 #start-btn:hover {
-    cursor: pointer;
+    cursor: var(--button-hover);
 }
+
 /* End: Welcome */
 
 /* Beginning: Quiz */
@@ -59,17 +67,30 @@ body {
 }
 
 .answer-buttons {
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: var(--button-border-radius);
+    padding: var(--button-padding);
     background-color: lightgray;
     gap: 10px;
     width: auto;
 }
 
 .answer-buttons:hover {
-    cursor: pointer;
+    cursor: var(--button-hover);
 }
+
 /* End: Quiz */
+
+/* Beginning: End */
+#save-btn {
+    border-radius: var(--button-border-radius);
+    padding: var(--button-padding);
+}
+
+#save-btn:hover {
+    cursor: var(--button-hover);
+}
+
+/* End: End */
 /* End: Main */
 
 
@@ -82,10 +103,12 @@ body {
     float: left;
     font-size: 20px;
 }
+
 /* End: Header */
 
 /* Beginning: Scores */
 #score-list {
     margin-left: 30px;
 }
+
 /* End: Scores */

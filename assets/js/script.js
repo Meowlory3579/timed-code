@@ -1,5 +1,5 @@
 // Globally-used variables
-var timeEl = document.querySelector(".time");
+var timeEl = document.querySelector('.time');
 var secondsLeft = 60;
 var timerInterval = 0;
 var initials = document.getElementById('initials');
@@ -41,10 +41,10 @@ timeEl.textContent = "Time Remaining: " + secondsLeft + " seconds";
 // Initialize startQuiz function once Start Quiz button is clicked
 document.getElementById('start-btn').addEventListener('click', startQuiz);
 
-// Once quiz starts, hide welcome-container, display quiz-container, and start timer
+// Once quiz starts, start timer, hide welcome-container, and display quiz-container
 function startQuiz() {
-  // If secondsLeft > 0, decrement timer by one second until 0 & display timer in timeEl. Penalty incorporated later on
-  timerInterval = setInterval(function () {
+  // If secondsLeft > 0, decrement timer by one second until 0 & display timer in timeEl. Penalty incorporated later on.
+  timerInterval = setInterval(() => {
     if (secondsLeft > 0) {
       secondsLeft--;
       timeEl.textContent = "Time Remaining: " + secondsLeft + " seconds";
@@ -88,20 +88,35 @@ function displayQuestion(questionObject) {
 function selectAnswer(e) {
   var selectedButton = e.target;
   var correct = selectedButton.textContent === questions[currentQuestionIndex].correct;
+  var feedbackEl = document.getElementById('feedback');
 
-  // If = prevents negative secondsLeft value. Else if = decrement by 10 seconds for incorrect answers
-  if (!correct && secondsLeft <= 10) {
-    secondsLeft = 0;
-  } else if (!correct) {
-    secondsLeft -= 10;
+  // Display whether the answer was correct or incorrect
+  if (correct) {
+    feedbackEl.textContent = 'Correct!';
+    feedbackEl.style.color = 'green';
+  } else {
+    feedbackEl.textContent = 'Incorrect!';
+    feedbackEl.style.color = 'red';
+    // If = prevents negative secondsLeft value. Else if = decrement by 10 seconds for incorrect answers
+    if (secondsLeft <= 10) {
+      secondsLeft = 0;
+    } else {
+      secondsLeft -= 10;
+    }
   }
+
+  // Hide the feedback after 1 second
+  setTimeout(() => {
+    feedbackEl.textContent = '';
+  }, 1000);
 
   // Move to next questions object
   currentQuestionIndex++;
 
   // Continue until reached end of questions
   if (currentQuestionIndex >= questions.length) {
-    endQuiz();
+    // Delay endQuiz call to allow users to see feedback
+    setTimeout(endQuiz, 1000);
   } else {
     showNextQuestion();
   }
@@ -109,16 +124,16 @@ function selectAnswer(e) {
 
 // Once quiz ends, clear timer, hide quiz-container and display end-container
 function endQuiz() {
-  clearInterval(timerInterval)
+  clearInterval(timerInterval);
   document.getElementById('quiz-container').style.display = 'none';
   document.getElementById('end-container').style.display = 'block';
-  document.getElementById('score').textContent = 'Your final score is: ' + secondsLeft;
+  document.getElementById('score').textContent = "Your final score is: " + secondsLeft;
   timeEl.textContent = "Time Remaining: " + secondsLeft + " seconds";
 }
 
 // Disable save button until initials are input
-initials.addEventListener('input', function() {
-  var initialsInput = this.value.trim();
+initials.addEventListener('input', (event) => {
+  var initialsInput = event.target.value.trim();
 
   if (initialsInput) {
     saveButton.disabled = false; // Enable button if initials are entered
@@ -137,20 +152,17 @@ function saveScore() {
     initials: initials.value,
   }
 
-  var allScores = localStorage.getItem("allScores");
+  var allScores = localStorage.getItem('allScores');
   if (allScores === null) {
-      allScores = [];
+    allScores = [];
   } else {
-      allScores = JSON.parse(allScores);
+    allScores = JSON.parse(allScores);
   }
   allScores.push(newScore);
-  var storedScores = localStorage.setItem("allScores", JSON.stringify(allScores));
+  var storedScores = localStorage.setItem('allScores', JSON.stringify(allScores));
 
   // Disable save button and return thank you message
-  saveButton.disabled = true; 
+  saveButton.disabled = true;
   var thankYou = document.getElementById('thank-you');
-  thankYou.textContent = 'Thank you!';
+  thankYou.textContent = "Thank you!";
 }
-
-// play again = reloads page
-
