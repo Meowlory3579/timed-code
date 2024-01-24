@@ -18,7 +18,7 @@ GIVEN I am taking a code quiz
 
 
 ## The following video demonstrates the web application's appearance and functionality
-![Webpage titled "Coding Quiz Challenge" featuring quiz instructions and a button to Start the Quiz. Once the user starts the quiz, the timer begins to decrement and the user is presented with coding-related questions. For every question they answer incorrectly, additional time is removed from their score and the timer. When all questions are answered or the timer reaches 0, the user can input their initials and save their score.](https://github.com/Meowlory3579/timed-code-quiz/blob/main/assets/images/functionality.gif)
+![Webpage titled "Coding Quiz Challenge" featuring quiz instructions and a button to Start the Quiz. Once the user starts the quiz, the timer begins to decrement and the user is presented with coding-related questions. For every question they answer incorrectly, additional time is removed from their score and the timer. When all questions are answered or the timer reaches 0, the user can input their initials and save their score.](https://github.com/Meowlory3579/timed-code-quiz/blob/main/assets/images/quiz-functionality.gif)
 
 
 ## Link to Deployed Application
@@ -26,3 +26,6 @@ https://meowlory3579.github.io/timed-code-quiz/
 
 ## Credits
 Reference Documentation: https://www.w3schools.com/jsref/jsref_foreach.asp | https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
+
+
